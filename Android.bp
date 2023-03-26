@@ -16,23 +16,18 @@ cc_prebuilt_library_shared {
 			srcs: ["proprietary/vendor/lib64/libskeymaster4device.so"],
 		},
 	},
-	shared_libs: [
-           "android.hardware.keymaster@4.0",
-           "android.hardware.keymaster@4.1",
-           "libbase",
-           "libc++",
-           "libc",
-           "libcrypto",
-           "libcutils",
-           "libdl",
-           "libkeymaster_messages",
-           "libkeymaster_portable",
-           "liblog",
-           "libm",
-           "libutils"
-        ],
-	check_elf_files: false,
 	compile_multilib: "64",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
+
+prebuilt_etc_xml {
+	name: "manifest_android.hardware.drm@1.3-service.widevine",
+	owner: "samsung",
+	src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
