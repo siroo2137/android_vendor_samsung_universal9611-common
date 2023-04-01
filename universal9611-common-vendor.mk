@@ -32,8 +32,10 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_gains_ti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains_ti.xml \
+    vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_gains_rc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains_rc.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_paths_ti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_ti.xml \
+    vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_gains_rc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains_rc.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_usb_gray.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_usb_gray.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/mixer_usb_white.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_usb_white.xml \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/wifi/hydra_config.sdb:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/hydra_config.sdb \
