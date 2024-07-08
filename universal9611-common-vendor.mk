@@ -7,6 +7,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/samsung/universal9611-common/proprietary/vendor/bin/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd \
+    vendor/samsung/universal9611-common/proprietary/vendor/bin/cass:$(TARGET_COPY_OUT_VENDOR)/bin/cass \
+    vendor/samsung/universal9611-common/proprietary/vendor/bin/vaultkeeperd:$(TARGET_COPY_OUT_VENDOR)/bin/vaultkeeperd \
     vendor/samsung/universal9611-common/proprietary/vendor/bin/hw/android.hardware.drm@1.3-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.3-service.widevine \
     vendor/samsung/universal9611-common/proprietary/vendor/bin/hw/gpsd:$(TARGET_COPY_OUT_VENDOR)/bin/hw/gpsd \
     vendor/samsung/universal9611-common/proprietary/vendor/bin/hw/rild:$(TARGET_COPY_OUT_VENDOR)/bin/hw/rild \
@@ -18,10 +20,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/gnss/gps.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cfg \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/gnss/gps.debug.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.debug.cfg \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
+    vendor/samsung/universal9611-common/proprietary/vendor/etc/init/cass.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cass.rc \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/init.baseband.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.baseband.rc \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/init.nfc.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nfc.samsung.rc \
-    vendor/samsung/universal9611-common/proprietary/vendor/etc/init/init.vendor.onebinary.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.onebinary.rc \
-    vendor/samsung/universal9611-common/proprietary/vendor/etc/init/init.vendor.rilchip.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilchip.rc \
+    vendor/samsung/universal9611-common/proprietary/vendor/etc/init/vaultkeeper_common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vaultkeeper_common.rc \
+    vendor/samsung/universal9611-common/proprietary/vendor/etc/init/vendor.samsung.rilchip.slsi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.rilchip.slsi.rc \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/teegris.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/teegris.rc \
     vendor/samsung/universal9611-common/proprietary/vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc \
@@ -78,6 +81,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsecnativefeature.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libsecril-client.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsecril-client.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libspatializerparamstorage.so:$(TARGET_COPY_OUT_VENDOR)/lib/libspatializerparamstorage.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib/libsemnativecarrierfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsemnativecarrierfeature.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libteecl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libteecl.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libuuid.so:$(TARGET_COPY_OUT_VENDOR)/lib/libuuid.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib/libwrappergps.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwrappergps.so \
@@ -91,27 +95,34 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libfloatingfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfloatingfeature.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libiwt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libiwt.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libkeymaster_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libkeymaster_helper.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libreference-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libreference-ril.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/librilutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librilutils.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libsec-ril-dsds.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsec-ril-dsds.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libprotobuf-cpp-full-21.7.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-21.7.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libril_sem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril_sem.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libsec-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsec-ril.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsecnativefeature.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libsecril-client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsecril-client.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libSemDataProps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libSemDataProps.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libsemnativecarrierfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsemnativecarrierfeature.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libSemTelephonyProps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libSemTelephonyProps.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libteecl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libteecl.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libuuid.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libuuid.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libstork_shared.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstork_shared.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libvkmanager_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvkmanager_vendor.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/libvkservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvkservice.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/libwrappergps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwrappergps.so \
     vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.gnss@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.gnss@2.0.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.bridge@2.0.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.channel@2.0.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio@2.0.so \
-    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio@2.1.so
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio-V1-ndk.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so \
+    vendor/samsung/universal9611-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so
 
 PRODUCT_PACKAGES += \
     libskeymaster4device \
-    manifest_android.hardware.drm@1.3-service.widevine
+    manifest_android.hardware.drm@1.3-service.widevine \
+    vendor.samsung.hardware.radio_manifest_2_33 \
+    vendor.samsung.hardware.radio.exclude.slsi \
+    vendor.samsung.hardware.sehradio_manifest_2_33
 
 PRODUCT_PACKAGES += \
     libGLES_mali_libOpenCL_symlink32 \

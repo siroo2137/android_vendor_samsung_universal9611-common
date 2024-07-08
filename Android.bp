@@ -31,6 +31,32 @@ prebuilt_etc_xml {
 	soc_specific: true,
 }
 
+prebuilt_etc_xml {
+	name: "vendor.samsung.hardware.radio_manifest_2_33",
+	owner: "samsung",
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "vendor.samsung.hardware.radio.exclude.slsi",
+	owner: "samsung",
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "vendor.samsung.hardware.sehradio_manifest_2_33",
+	owner: "samsung",
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
 install_symlink {
 	name: "libGLES_mali_libOpenCL_symlink32",
 	soc_specific: true,
